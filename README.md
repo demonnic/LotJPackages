@@ -7,9 +7,13 @@ lua local a="https://github.com/demonnic/LotJPackages/raw/master/AutoResearch/Lo
 
 ### Usage (aliases)
 to start autoresearching: `autoresearch`
+
 to pause autoresearching: `pauseresearch`
+
 to stop  autoresearching: `stopresearch`
+
 to resume researching   : `resumeresearch`
+
 to see what skills are left: `skillsLeft`
 
 ### Warnings
