@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>AutoResearch</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Research Next Item</name>
+                <script>raiseEvent(&quot;researchNext&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>You cannot learn more about that from books.</string>
+                    <string>You can't learn about that in books. Go find a teacher.</string>
+                    <string>You can't learn smuggling skills from a book!</string>
+                    <string>You can't learn bounty hunting skills from a book!</string>
+                    <string>You aren't going to learn that from a book. Go find a Wookiee!</string>
+                    <string>Go learn it the hard way, sissy.</string>
+                    <string>You're not going to learn force spells from a book. Trust me.</string>
+                    <string>^You can\'t learn (any )?more about that from books(\!|\.)$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                    <integer>3</integer>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Research Successful</name>
+                <script>raiseEvent(&quot;researchSuccessful&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>You finish your studies and feel much more skilled.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Research Failed</name>
+                <script>raiseEvent(&quot;researchFailed&quot;)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>You study for hours on end, but fail to gather any knowledge.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Practice</name>
+                <script>demonnic.lotj.autoresearch.skills = {}
+demonnic.lotj.autoresearch.skills.index = {}
+demonnic.lotj.autoresearch.skills.skillLevels = {}</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>99</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>------------------------------------Skills ------------------------------------</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>3</integer>
+                </regexCodePropertyList>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Capture 1</name>
+                    <script>local skill1 = string.trim(matches[2])
+local skill1percent = tonumber(matches[3])
+demonnic.lotj.autoresearch:addSkill(skill1, skill1percent)
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^([\s\w,-]+)(\s+\d+)\%(\s?)*$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Capture 2</name>
+                    <script>local skill1 = string.trim(matches[2])
+local skill1percent = tonumber(matches[3])
+local skill2 = string.trim(matches[4])
+local skill2percent = tonumber(matches[5])
+demonnic.lotj.autoresearch:addSkill(skill1, skill1percent)
+demonnic.lotj.autoresearch:addSkill(skill2, skill2percent)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^([\s\w,-]+)(\s+\d+)\%([\s\w,-]+)(\s+\d+)\%(\s?)*$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Capture 3</name>
+                    <script>local skill1 = string.trim(matches[2])
+local skill1percent = tonumber(matches[3])
+local skill2 = string.trim(matches[4])
+local skill2percent = tonumber(matches[5])
+local skill3 = string.trim(matches[6])
+local skill3percent = tonumber(matches[7])
+demonnic.lotj.autoresearch:addSkill(skill1, skill1percent)
+demonnic.lotj.autoresearch:addSkill(skill2, skill2percent)
+demonnic.lotj.autoresearch:addSkill(skill3, skill3percent)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^([\s\w,-]+)(\s+\d+)\%([\s\w,-]+)(\s+\d+)\%([\s\w,-]+)(\s+\d+)\%(\s?)*$</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Close Practice</name>
+                    <script>setTriggerStayOpen(&quot;demonnicPractice&quot;,0)
+if demonnic.lotj.autoresearch.researching then
+ display(demonnic.lotj.autoresearch.skills.index)
+end
+raiseEvent(&quot;researchSkillsCaptured&quot;)</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>To see a shorter practice list, type PRACTICE &lt;class name&gt;.</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>3</integer>
+                    </regexCodePropertyList>
+                </Trigger>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <TimerPackage/>
+    <AliasPackage>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>AutoResearch</name>
+            <script></script>
+            <command></command>
+            <packageName></packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>autoresearch</name>
+                <script>demonnic.lotj.autoresearch:start()</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^autoresearch$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>skillsLeft</name>
+                <script>cecho(&quot;&lt;purple:green&gt;Skills left to research!\n&quot;)
+for index,skill in ipairs(demonnic.lotj.autoresearch.skillsLeft) do
+  cecho(string.format(&quot;&lt;purple:green&gt;%d. %s\n&quot;,index, skill))
+end</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^skillsLeft$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>stopresearch</name>
+                <script>demonnic.lotj.autoresearch.researching = false
+demonnic.lotj.autoresearch.currentSkill = &quot;&quot;
+demonnic.lotj.autoresearch.skillsLeft= {}</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^stopresearch$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>pauseresearch</name>
+                <script>demonnic.lotj.autoresearch.researching = false</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^pauseresearch$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>resumeresearch</name>
+                <script>demonnic.lotj.autoresearch.researching = true
+raiseEvent(&quot;researchFailed&quot;)</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^resumeresearch$</regex>
+            </Alias>
+        </AliasGroup>
+    </AliasPackage>
+    <ActionPackage/>
+    <ScriptPackage>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>Autoresearch</name>
+            <packageName></packageName>
+            <script>demonnic = demonnic or {}
+demonnic.lotj = demonnic.lotj or {}
+demonnic.lotj.autoresearch = demonnic.lotj.autoresearch or {}
+demonnic.lotj.autoresearch.skills = demonnic.lotj.autoresearch.skills or {}
+demonnic.lotj.autoresearch.skills.index = demonnic.lotj.autoresearch.skills.index or {}
+demonnic.lotj.autoresearch.skills.skillLevels = demonnic.lotj.autoresearch.skills.skillLevels or {}
+function demonnic.lotj.autoresearch:addSkill(skill,percent)
+  if table.contains(demonnic.lotj.autoresearch.skills.index,skill) then
+    local indexToRemove = 0
+    for i,skillname in pairs(demonnic.lotj.autoresearch.skills.index) do
+      if skillname == skill then
+        indexToRemove = i
+      end
+    end
+    table.remove(demonnic.lotj.autoresearch.skills.index,indexToRemove)
+  end
+  table.insert(demonnic.lotj.autoresearch.skills.index,skill)
+  demonnic.lotj.autoresearch.skills.skillLevels[skill] = percent
+end
+
+function demonnic.lotj.autoresearch:start()
+  	demonnic.lotj.autoresearch.researching = true
+   send(&quot;prac&quot;)
+end
+
+function demonnic.lotj.autoresearch:skillsCaptured()
+  if demonnic.lotj.autoresearch.researching then
+    demonnic.lotj.autoresearch.skillsLeft = table.deepcopy(demonnic.lotj.autoresearch.skills.index)
+    demonnic.lotj.autoresearch.currentSkill = table.remove(demonnic.lotj.autoresearch.skillsLeft,1)
+    send(string.format(&quot;research %s&quot;,demonnic.lotj.autoresearch.currentSkill))
+  end
+end
+
+function demonnic.lotj.autoresearch:researchNext()
+  if demonnic.lotj.autoresearch.researching then
+    if table.size(demonnic.lotj.autoresearch.skillsLeft) &gt; 0 then
+      demonnic.lotj.autoresearch.currentSkill = table.remove(demonnic.lotj.autoresearch.skillsLeft,1)
+      send(string.format(&quot;research %s&quot;, demonnic.lotj.autoresearch.currentSkill))
+    else
+      demonnic.lotj.autoresearch.researching = false
+      cecho(&quot;\n&lt;purple:green&gt;Researching seems to be complete\n&quot;)
+    end
+  end
+end
+
+function demonnic.lotj.autoresearch:researchSuccessful()
+  local currentSkill = demonnic.lotj.autoresearch.currentSkill
+  local currentPercent = demonnic.lotj.autoresearch.skills.skillLevels[currentSkill]
+  local newPercent = currentPercent + 15
+  if newPercent &gt; 90 then newPercent = 90 end
+  demonnic.lotj.autoresearch.skills.skillLevels[currentSkill] = newPercent
+  if newPercent == 90 then
+    raiseEvent(&quot;researchNext&quot;)
+  else
+    send(string.format(&quot;research %s&quot;, currentSkill))
+  end
+end
+
+function demonnic.lotj.autoresearch:researchFailed()
+  send(string.format(&quot;research %s&quot;, demonnic.lotj.autoresearch.currentSkill))
+end
+registerAnonymousEventHandler(&quot;researchFailed&quot;,&quot;demonnic.lotj.autoresearch.researchFailed&quot;)
+registerAnonymousEventHandler(&quot;researchSuccessful&quot;,&quot;demonnic.lotj.autoresearch.researchSuccessful&quot;)
+registerAnonymousEventHandler(&quot;researchNext&quot;,&quot;demonnic.lotj.autoresearch.researchNext&quot;)
+registerAnonymousEventHandler(&quot;researchSkillsCaptured&quot;,&quot;demonnic.lotj.autoresearch.skillsCaptured&quot;)</script>
+            <eventHandlerList/>
+        </ScriptGroup>
+    </ScriptPackage>
+    <KeyPackage/>
+</MudletPackage>
